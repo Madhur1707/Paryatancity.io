@@ -38,41 +38,46 @@
 
 /*** Sticky Notes ***/
 .sticky-note {
-    cursor: pointer;
-    width: 20%;
-    height: 35px;
-    background-color: teal;
-    position: fixed;
-    padding: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    top: 160px;
-    right: 0;
-    z-index: 1;
+  cursor: pointer;
+  width: 20%;
+  height: 35px;
+  background-color: teal;
+  position: fixed;
+  padding: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  top: 160px;
+  right: 0;
+  z-index: 1;
 }
+
 .note-1 {
   top: 160px;
   right: 0;
 }
+
 .sticky-note a {
   color: #f5f5f5;
   font-weight: 100;
   justify-content: center;
   text-align: center;
 }
+
 @media screen and (max-width: 480px) {
   .sticky-note {
-      width: 50%;
-      height: 35px;
-      top: 100px;
-      right: 0;
-      margin-top: 33px;
-      padding: 5px;
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Center vertically */
-      align-items: center; /* Center horizontally */
+    width: 50%;
+    height: 35px;
+    top: 100px;
+    right: 0;
+    margin-top: 33px;
+    padding: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
 
   }
 }
@@ -85,23 +90,26 @@
     text-align: right;
   }
 }
+
 @media screen and (max-width: 480px) {
-  .sticky-note  p{
-margin-top: 0px;
-margin-bottom: 0;
+  .sticky-note p {
+    margin-top: 0px;
+    margin-bottom: 0;
 
   }
 }
+
 /*** Sticky Notes End ***/
 
 /*************about us screen size home page ********/
 
 @media (max-width: 480px) {
   #text-section {
-      order: 1; 
+    order: 1;
   }
+
   #image-section {
-      order: 2; 
+    order: 2;
   }
 }
 
@@ -171,7 +179,7 @@ margin-bottom: 0;
 }
 
 .navbar-light .navbar-brand img {
-  max-height: 100px;  
+  max-height: 100px;
   transition: 0.5s;
 }
 
@@ -249,7 +257,7 @@ margin-bottom: 0;
   background-size: cover;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -370,30 +378,31 @@ margin-bottom: 0;
 /******* Package Table *******/
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 th,
 td {
-    border: 1px solid black;
-    padding: 8px;
+  border: 1px solid black;
+  padding: 8px;
 
 
 }
 
 th {
-    text-align: center;
-    font-weight: bold;
-    color: black;
+  text-align: center;
+  font-weight: bold;
+  color: black;
 }
 
 .section {
-    border-left: 1px solid black;
-    padding-left: 10px;
-    font-weight: bold;
-    color: black;
+  border-left: 1px solid black;
+  padding-left: 10px;
+  font-weight: bold;
+  color: black;
 }
+
 /***** 2nd Table *****************/
 table {
   border-collapse: collapse;
@@ -420,6 +429,7 @@ th {
   font-weight: bold;
   color: black;
 }
+
 /***** 3rd Table *****************/
 table {
   border-collapse: collapse;
@@ -462,17 +472,18 @@ th {
 
 @media screen and (max-width: 480px) {
   .whatsapp-sticky {
-      margin-top: 20px;
-      bottom: 280px;
+    margin-top: 20px;
+    bottom: 30%;
 
   }
 }
-@media screen and (max-width: 840px){
-  .whatsapp-sticky {
-      margin-top: 20px;
-      bottom: 280px;
 
-  }  
+@media screen and (max-width: 840px) {
+  .whatsapp-sticky {
+    margin-top: 20px;
+    bottom: 60%;
+
+  }
 }
 
 /*** Testimonial ***/
@@ -483,11 +494,9 @@ th {
   left: 0;
   height: 100%;
   width: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
   z-index: 1;
 }
 
@@ -498,15 +507,14 @@ th {
   right: 0;
   height: 100%;
   width: 0;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
   z-index: 1;
 }
 
 @media (min-width: 768px) {
+
   .testimonial-carousel::before,
   .testimonial-carousel::after {
     width: 200px;
@@ -514,6 +522,7 @@ th {
 }
 
 @media (min-width: 992px) {
+
   .testimonial-carousel::before,
   .testimonial-carousel::after {
     width: 300px;
@@ -625,7 +634,8 @@ th {
 
 /* **** Carousel Header Css*** */
 .carousel-inner {
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden;
+  /* Hide overflowing content */
 }
 
 .carousel-item img {
@@ -635,8 +645,10 @@ th {
 }
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Background color for captions */
-  color: #fff; /* Text color for captions */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Background color for captions */
+  color: #fff;
+  /* Text color for captions */
   position: absolute;
   top: 0;
   left: 0;
@@ -651,82 +663,105 @@ th {
 
 /* Optional: Style the caption text */
 .carousel-caption h1 {
-  font-size: 50px; /* Font size for caption headings */
+  font-size: 50px;
+  /* Font size for caption headings */
   color: #ffffff;
   width: 100%;
 }
 
 .carousel-caption p {
-  font-size: 25px; /* Font size for caption content */
+  font-size: 25px;
+  /* Font size for caption content */
 }
 
 /***** PopUp Fourm******/
 
 /* Styling for the background overlay */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    filter: blur(20px);
 
-    overflow: hidden;
+
+#popupIcon {
+  position: fixed;
+  width: 4%;
+  bottom: 30%;
+  right: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  
+}
+@media screen and (max-width: 480px) {
+  #popupIcon{
+    margin-top: 20px;
+    bottom: 25%;
+    width: 12%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  #popupIcon {
+    width: 12%;
+    margin-top: 20px;
+    bottom: 50%;
+right: 14px;
+  }
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  filter: blur(20px);
+  overflow: hidden;
 
 }
 
-
-
 .popup-form {
-    display: flex;
-    position: fixed;
-    background: #fff;
-    margin-top: 55px;
-    padding: 15px;
-    max-width: 100%;
-    width: 700px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    z-index: 9999;
-    overflow-y: scroll;
-    flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: fixed;
+  background: #fff;
+  margin-top: 55px;
+  padding: 15px;
+  width: 70%;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 9999;
+  overflow-y: scroll;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #cancel {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    border-radius: 20%;
-    border: 1px solid black;
-
-    background-color: #0a0a23;
-    color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: #0a0a23;
+  color: #fff;
 
 }
 
 #cancel:hover {
-    background-color: #fff;
-    color: black;
+  background-color: rgb(228, 15, 15);
+  color: #fff;
 }
 
 #bookNow {
-    background: #3b82f6;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 #bookNow:hover {
-    background: #2563eb;
+  background: #2563eb;
 }
 
 
@@ -735,118 +770,142 @@ th {
 .popup-form input[type="email"],
 .popup-form input[type="tel"],
 .popup-form input[type="date"],
-.popup-form input[type="time"],
+.popup-form input[type="text"],
 .popup-form textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 50%;
+  margin: 20px 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .popup-form label {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
 }
 
 .popup-form select {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    color: #333;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 .popup-form textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
-    /* Allow vertical resizing of the textarea */
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  /* Allow vertical resizing of the textarea */
 }
 
 .popup-form input:focus,
 .popup-form textarea:focus,
 .popup-form select:focus {
-    outline: none;
-    border-color: #3b82f6;
-    /* Blue border color on focus */
+  outline: none;
+  border-color: #3b82f6;
+  /* Blue border color on focus */
 }
 
 .popup-form input[type="number"] {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    color: #333;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-.date-time-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.name-email-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Style for date and time labels and inputs */
-.date-time-container label {
-    display: flex;
-    width: 50px;
+.name-email-container label {
+  display: flex;
+  width: 60px;
+}
+.name-email-container input[type="text"],
+.name-email-container input[type="email"] {
+  width: 50%;
+  margin: 25px 4px 10px;
+  justify-content: space-between;
 
 }
-
-.date-time-container input[type="date"],
-.date-time-container input[type="time"] {
-    width: 45%;
-    /* Adjust as needed to control the width */
-    margin: 5px 2px 0px;
-    justify-content: space-between;
-
+.date-number-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.date-number-container label {
+  display: flex;
+  width: 60px;
+}
+
+.date-number-container input[type="tel"],
+.date-number-container input[type="date"] {
+  width: 50%;
+  margin: 25px 4px 10px;
+  justify-content: space-between;
+}
+.destination-person-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+.destination-person-container label {
+  display: flex;
+  width: 65px;
+}
+.destination-person-container  input [type="text"],
+.destination-person-container  input [type="number"] {
+  width: 50%;
+  margin: 20px 4px 10px;
+  justify-content: space-between;
+}
+
 
 @media screen and (max-width: 480px) {
-    .popup-form {
-        width: 90%;
-        /* Adjust the width to fit the screen */
-        height: auto;
-        /* Let the height adjust based on content */
-        top: 0;
-        left: 20px;
-        transform: none;
-        /* Reset transform to center-align on small screens */
-    }
+  .popup-form {
+    width: 90%;
+    height: 60vh;
+    top: 5%;
+    left: 5%;
+    transform: none;
 
-    #cancel {
-        top: 5px;
-        right: 5px;
-    }
+  }
 
-    #bookNow {
-        width: 100%;
-        /* Make the button full width on small screens */
-    }
+  #cancel {
+    top: 1px;
+    right: 5px;
+  }
 
-    /* Adjust font size, padding, and margins for better mobile display */
-    .popup-form label {
-        font-size: 14px;
-    }
+  #bookNow {
+    width: 100%;
+    /* Make the button full width on small screens */
+  }
 
-    .popup-form input[type="text"],
-    .popup-form input[type="email"],
-    .popup-form input[type="tel"],
-    .popup-form input[type="date"],
-    .popup-form input[type="time"],
-    .popup-form textarea,
-    .popup-form select,
-    .popup-form input[type="number"] {
-        font-size: 14px;
-        padding: 5px;
-        margin: 3px 0;
-    }
+  /* Adjust font size, padding, and margins for better mobile display */
+  .popup-form label {
+    font-size: 14px;
+  }
+
+  .popup-form input[type="text"],
+.popup-form input[type="email"],
+.popup-form input[type="tel"],
+.popup-form input[type="date"],
+.popup-form input[type="text"],
+.popup-form textarea {
+  font-size: 14px;
+  padding: 5px;
+  margin: 18px 5px;
 }
 
+}

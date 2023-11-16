@@ -59,17 +59,25 @@
   ///carousel Photos****************
 
   /************ PopUp Form  ***************** */
-  setTimeout(function () {
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById("popupForm").style.display = "block";
-    document.body.style.overflow = "hidden"; // Prevent scrolling on the background
-  }); // Adjust the delay in milliseconds (10000ms = 10 seconds)
-
-  document.getElementById("cancel").addEventListener("click", function () {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("popupForm").style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable scrolling on the background
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add click event listener to the popup icon
+    document.getElementById("popupIcon").addEventListener("click", function () {
+      // Display the overlay and popupForm
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("popupForm").style.display = "block";
+      document.body.style.overflow = "hidden"; // Prevent scrolling on the background
+    });
+  
+    // Add click event listener to the cancel button inside the popup
+    document.getElementById("cancel").addEventListener("click", function () {
+      // Hide the overlay and popupForm
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popupForm").style.display = "none";
+      document.body.style.overflow = "auto"; // Re-enable scrolling on the background
+    });
   });
+  
+
   /************ PopUp Form  ***************** */
 
   // Back to top button

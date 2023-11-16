@@ -345,7 +345,7 @@
                                         30% OFF</div>
                                     <div
                                         class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                        {placeholder}</div>
+                                        SARNATH</div>
                                 </a>
                             </div>
                             <div class="col-lg-6 col-md-12 wow zoomIn"
@@ -361,7 +361,7 @@
                                         25% OFF</div>
                                     <div
                                         class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                        {placeholder}</div>
+                                        Ganga Ghat</div>
                                 </a>
                             </div>
                             <div class="col-lg-6 col-md-12 wow zoomIn"
@@ -376,12 +376,12 @@
                                         35% OFF</div>
                                     <div
                                         class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
-                                        {placeholder}</div>
+                                        Vishwanath Temple, Varanasi</div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-6 wow zoomIn"
+                    <!-- <div class="col-lg-5 col-md-6 wow zoomIn"
                         data-wow-delay="0.7s" style="min-height: 350px;">
                         <a
                             class="position-relative d-block h-100 overflow-hidden"
@@ -397,7 +397,7 @@
                                 class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
                                 {placeholder}</div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -450,7 +450,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="number" name="Mobile"
+                                            <input type="text" name="Mobile"
                                                 class="form-control bg-transparent"
                                                 id="number"
                                                 placeholder="Your Phone Number">
@@ -472,7 +472,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" name="Destination"
+                                            <input type="text"
+                                                name="Destination"
                                                 class="form-control bg-transparent"
                                                 id="text"
                                                 placeholder="Destination">
@@ -482,7 +483,8 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
 
-                                            <input type="number" name="Number Of Persons"
+                                            <input type="number"
+                                                name="Number Of Persons"
                                                 class="form-control bg-transparent"
                                                 id="number"
                                                 placeholder="number">
@@ -494,7 +496,7 @@
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea
-                                            name="Message"
+                                                name="Message"
                                                 class="form-control bg-transparent"
                                                 placeholder="Special Request"
                                                 id="message"
@@ -641,7 +643,7 @@
 
         <!--------WhatsApp Icon-->
         <div class="whatsapp-sticky">
-            <a href="https://api.whatsapp.com/send?phone=8052942073">
+            <a href="https://api.whatsapp.com/send?phone=918052942073">
                 <img src="img/wa.jpg" alt="WhatsApp">
             </a>
         </div>
@@ -650,35 +652,36 @@
         <!-------------------Popup Fourm start--------->
 
         <title>Popup Form</title>
+        <img src="img/chat.png" alt="Popup Icon" id="popupIcon">
         <div class="overlay" id="overlay"></div>
         <div class="popup-form" id="popupForm">
-            
+
             <button type="button" id="cancel">X</button>
-         
-                <form action="https://formsubmit.co/madhurpathak000@gmail.com" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="Name" required>
+            <form action="https://formsubmit.co/info@paryatancity.com"
+                method="POST">
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="Email" required>
+                <div class="name-email-container">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name" required>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="Phone" required>
-
-                <div class="date-time-container">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="Date" required>
-
-                    <label for="time">Time:</label>
-                    <input type="time" id="time" name="Time">
+                    <label for="email">Email:</label> 
+                    <input type="email" id="email" name="Email" required>
                 </div>
 
-                <label for="destination"> Destination:</label>
-                <input type="text" id="destination" name="Destination"
-                    required>
-                <label for="destination">Number Of Persons</label>
-                <input type="text" id="destination" name="Number of Persons"
-                    >
+                <div class="date-number-container">
+                    <label for="phone">Mobile:</label>
+                    <input type="tel" id="phone" name="Phone" required>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="Date" required>
+                </div>
+             <div class="destination-person-container">
+                 <label for="destination"> Place:</label>
+                 <input type="text" id="destination" name="Destination"
+                     required>
+                 <label for="destination">Persons:</label>
+                 <input type="text" id="destination" name="Number of Persons">
+             </div>
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="Message" rows="4"></textarea>
