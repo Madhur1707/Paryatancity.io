@@ -60,20 +60,37 @@
 
   /*******************Read More Toggle Button******** */
   document.addEventListener("DOMContentLoaded", function() {
-    function toggleParagraph() {
-      var paragraph = document.getElementById("hiddenParagraph");
-      if (paragraph.style.opacity === "0" || paragraph.style.opacity === "") {
+    function toggleParagraph(day) {
+      var paragraph = document.getElementById("hiddenParagraph" + day);
+      if (paragraph.style.maxHeight === "0px" || paragraph.style.maxHeight === "") {
         paragraph.style.display = "block";
         setTimeout(function() {
+          paragraph.style.maxHeight = paragraph.scrollHeight + "px";
           paragraph.style.opacity = "1";
         }, 10);
       } else {
+        paragraph.style.maxHeight = "0px";
         paragraph.style.opacity = "0";
         setTimeout(function() {
           paragraph.style.display = "none";
         }, 500);
       }
     }
+  
+    // Use toggleParagraph function for Day 1
+    document.getElementById("readMoreButton1").addEventListener("click", function() {
+      toggleParagraph(1);
+    });
+  
+    // Use toggleParagraph function for Day 2
+    document.getElementById("readMoreButton2").addEventListener("click", function() {
+      toggleParagraph(2);
+    });
+    document.getElementById("readMoreButton3").addEventListener("click",function () {
+     toggleParagraph(3); 
+    });
+  /*******************Read More Toggle Button******** */
+
   
     // Add event listener to the "Read More" button
     var readMoreButton = document.querySelector(".btn-primary.border-end");

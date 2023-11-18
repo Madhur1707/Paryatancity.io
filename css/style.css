@@ -310,6 +310,26 @@
   color: var(--light) !important;
 }
 
+/*** services image css for motion ***/
+/* Apply the bounce animation to the image */
+.simg {
+  width: 100%;
+  text-align: center;
+  animation: bounce 1s infinite alternate; /* Adjust the duration as needed */
+}
+
+/* Define the bounce animation */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px); /* Adjust the distance you want the image to move */
+  }
+}
+
+/*** services image css for motion ***/
+
 /*** Destination ***/
 .destination img {
   transition: 0.5s;
@@ -442,11 +462,49 @@ th {
   color: black;
 }
 /*************read More Pacakge***********/
-#hiddenParagraph {
+/* Day 1 */
+#hiddenParagraph1 {
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; 
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+
+/* Day 2 */
+#hiddenParagraph2 {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+/* Day 3 */
+#hiddenParagraph3 {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Days Heading Style */
+.style {
+  margin: 1em 0 0.5em 0;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 300;
+  font-family: "Orienta", sans-serif;
+  background: #20002c;
+  background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
+  background: linear-gradient(to right, #cbb4d4, #20002c);
+  border-radius: 20px;
+  text-align: center;
+}
+/* Days Heading Style */
+
 /*************read More Pacakge***********/
 
 /************** whatsapp sticky***********/
@@ -677,7 +735,20 @@ th {
   right: 17px;
   cursor: pointer;
   z-index: 1000;
+  animation: bounce 1s infinite alternate; /* Use the "bounce" animation */
 }
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(
+      -10px
+    ); /* Adjust the distance you want the icon to move */
+  }
+}
+
 @media screen and (max-width: 480px) {
   #popupIcon {
     margin-top: 20px;
