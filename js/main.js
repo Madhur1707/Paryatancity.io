@@ -58,26 +58,48 @@
   });
   ///carousel Photos****************
 
+  /*******************Read More Toggle Button******** */
+  document.addEventListener("DOMContentLoaded", function() {
+    function toggleParagraph() {
+      var paragraph = document.getElementById("hiddenParagraph");
+      if (paragraph.style.opacity === "0" || paragraph.style.opacity === "") {
+        paragraph.style.display = "block";
+        setTimeout(function() {
+          paragraph.style.opacity = "1";
+        }, 10);
+      } else {
+        paragraph.style.opacity = "0";
+        setTimeout(function() {
+          paragraph.style.display = "none";
+        }, 500);
+      }
+    }
+  
+    // Add event listener to the "Read More" button
+    var readMoreButton = document.querySelector(".btn-primary.border-end");
+    if (readMoreButton) {
+      readMoreButton.addEventListener("click", toggleParagraph);
+    }
+  });
+  
+  /*******************Read More Toggle Button******** */
+
   /************ PopUp Form  ***************** */
+
   document.addEventListener("DOMContentLoaded", function () {
-    // Add click event listener to the popup icon
     document.getElementById("popupIcon").addEventListener("click", function () {
-      // Display the overlay and popupForm
       document.getElementById("overlay").style.display = "block";
       document.getElementById("popupForm").style.display = "block";
-      document.body.style.overflow = "hidden"; // Prevent scrolling on the background
+      document.body.style.overflow = "hidden"; 
     });
   
-    // Add click event listener to the cancel button inside the popup
     document.getElementById("cancel").addEventListener("click", function () {
-      // Hide the overlay and popupForm
       document.getElementById("overlay").style.display = "none";
       document.getElementById("popupForm").style.display = "none";
-      document.body.style.overflow = "auto"; // Re-enable scrolling on the background
+      document.body.style.overflow = "auto"; 
     });
   });
   
-
   /************ PopUp Form  ***************** */
 
   // Back to top button

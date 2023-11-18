@@ -78,7 +78,6 @@
     /* Center vertically */
     align-items: center;
     /* Center horizontally */
-
   }
 }
 
@@ -95,7 +94,6 @@
   .sticky-note p {
     margin-top: 0px;
     margin-bottom: 0;
-
   }
 }
 
@@ -112,10 +110,6 @@
     order: 2;
   }
 }
-
-
-
-
 
 /*** Button ***/
 .btn {
@@ -142,6 +136,7 @@
 .btn-lg-square {
   width: 48px;
   height: 48px;
+  right: 17px;
 }
 
 .btn-square,
@@ -204,10 +199,6 @@
     margin-left: 0;
     color: var(--dark) !important;
   }
-
-  /* .navbar-light .navbar-brand img {
-    max-height: 45px;
-  } */
 }
 
 @media (min-width: 992px) {
@@ -257,7 +248,7 @@
   background-size: cover;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -386,8 +377,6 @@ th,
 td {
   border: 1px solid black;
   padding: 8px;
-
-
 }
 
 th {
@@ -413,8 +402,6 @@ th,
 td {
   border: 1px solid black;
   padding: 8px;
-
-
 }
 
 th {
@@ -440,8 +427,6 @@ th,
 td {
   border: 1px solid black;
   padding: 8px;
-
-
 }
 
 th {
@@ -456,12 +441,19 @@ th {
   font-weight: bold;
   color: black;
 }
+/*************read More Pacakge***********/
+#hiddenParagraph {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; 
+}
+/*************read More Pacakge***********/
 
 /************** whatsapp sticky***********/
 .whatsapp-sticky {
   position: fixed;
-  bottom: 250px;
-  right: 10px;
+  bottom: 225px;
+  right: 17px;
   z-index: 999;
 }
 
@@ -474,7 +466,6 @@ th {
   .whatsapp-sticky {
     margin-top: 20px;
     bottom: 30%;
-
   }
 }
 
@@ -482,7 +473,6 @@ th {
   .whatsapp-sticky {
     margin-top: 20px;
     bottom: 60%;
-
   }
 }
 
@@ -494,9 +484,11 @@ th {
   left: 0;
   height: 100%;
   width: 0;
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 1;
 }
 
@@ -507,14 +499,15 @@ th {
   right: 0;
   height: 100%;
   width: 0;
-  background: linear-gradient(to left,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 1;
 }
 
 @media (min-width: 768px) {
-
   .testimonial-carousel::before,
   .testimonial-carousel::after {
     width: 200px;
@@ -522,7 +515,6 @@ th {
 }
 
 @media (min-width: 992px) {
-
   .testimonial-carousel::before,
   .testimonial-carousel::after {
     width: 300px;
@@ -678,18 +670,16 @@ th {
 
 /* Styling for the background overlay */
 
-
 #popupIcon {
   position: fixed;
   width: 4%;
-  bottom: 30%;
-  right: 12px;
+  bottom: 22%;
+  right: 17px;
   cursor: pointer;
   z-index: 1000;
-  
 }
 @media screen and (max-width: 480px) {
-  #popupIcon{
+  #popupIcon {
     margin-top: 20px;
     bottom: 25%;
     width: 12%;
@@ -701,7 +691,7 @@ th {
     width: 12%;
     margin-top: 20px;
     bottom: 50%;
-right: 14px;
+    right: 14px;
   }
 }
 .overlay {
@@ -715,7 +705,6 @@ right: 14px;
   z-index: 1;
   filter: blur(20px);
   overflow: hidden;
-
 }
 
 .popup-form {
@@ -742,7 +731,6 @@ right: 14px;
   border-radius: 50%;
   background-color: #0a0a23;
   color: #fff;
-
 }
 
 #cancel:hover {
@@ -763,7 +751,6 @@ right: 14px;
 #bookNow:hover {
   background: #2563eb;
 }
-
 
 /* Add your own CSS for styling the form fields */
 .popup-form input[type="text"],
@@ -837,7 +824,6 @@ right: 14px;
   width: 50%;
   margin: 25px 4px 10px;
   justify-content: space-between;
-
 }
 .date-number-container {
   display: flex;
@@ -855,22 +841,21 @@ right: 14px;
   margin: 25px 4px 10px;
   justify-content: space-between;
 }
-.destination-person-container{
+.destination-person-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 }
 .destination-person-container label {
   display: flex;
   width: 65px;
 }
-.destination-person-container  input [type="text"],
-.destination-person-container  input [type="number"] {
+.destination-person-container input [type="text"],
+.destination-person-container input [type="number"] {
   width: 50%;
   margin: 20px 4px 10px;
   justify-content: space-between;
 }
-
 
 @media screen and (max-width: 480px) {
   .popup-form {
@@ -879,7 +864,6 @@ right: 14px;
     top: 5%;
     left: 5%;
     transform: none;
-
   }
 
   #cancel {
@@ -898,14 +882,13 @@ right: 14px;
   }
 
   .popup-form input[type="text"],
-.popup-form input[type="email"],
-.popup-form input[type="tel"],
-.popup-form input[type="date"],
-.popup-form input[type="text"],
-.popup-form textarea {
-  font-size: 14px;
-  padding: 5px;
-  margin: 18px 5px;
-}
-
+  .popup-form input[type="email"],
+  .popup-form input[type="tel"],
+  .popup-form input[type="date"],
+  .popup-form input[type="text"],
+  .popup-form textarea {
+    font-size: 14px;
+    padding: 5px;
+    margin: 18px 5px;
+  }
 }
