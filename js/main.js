@@ -102,21 +102,25 @@
   /*******************Read More Toggle Button******** */
 
   /************ PopUp Form  ***************** */
-
   document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("popupIcon").addEventListener("click", function () {
-      document.getElementById("overlay").style.display = "block";
-      document.getElementById("popupForm").style.display = "block";
-      document.body.style.overflow = "hidden"; 
-    });
-  
-    document.getElementById("cancel").addEventListener("click", function () {
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("popupForm").style.display = "none";
-      document.body.style.overflow = "auto"; 
-    });
-  });
-  
+    var popupIcon = document.getElementById("popupIcon");
+    var popupForm = document.getElementById("popupForm");
+    var overlay = document.getElementById("overlay");
+    var cancelBtn = document.getElementById("cancel");
+
+    function openPopupForm() {
+        popupForm.style.display = "block";
+        overlay.style.display = "block";
+    }
+
+    function closePopupForm() {
+        popupForm.style.display = "none";
+        overlay.style.display = "none";
+    }
+
+    popupIcon.addEventListener("click", openPopupForm);
+    cancelBtn.addEventListener("click", closePopupForm);
+});
   /************ PopUp Form  ***************** */
 
   // Back to top button
