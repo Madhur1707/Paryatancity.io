@@ -65,7 +65,7 @@
 
 @media screen and (max-width: 480px) {
   .sticky-note {
-    width: 50%;
+    width: 60%;
     height: 35px;
     top: 100px;
     right: 0;
@@ -75,9 +75,33 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center vertically */
     align-items: center;
-    /* Center horizontally */
+  
+  }
+}
+@media screen and (max-width: 780px) {
+  .sticky-note {
+    width: 45%;
+    height: 35px;
+    top: 100px;
+    right: 0;
+    margin-top: 33px;
+    padding: 6px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .sticky-note a {
+    color: #f5f5f5;
+    font-weight: 100;
+    justify-content: center;
+    text-align: right;
   }
 }
 
@@ -90,10 +114,38 @@
   }
 }
 
+@media screen and (max-width: 780px) {
+  .sticky-note p {
+    margin-top: 0px;
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .sticky-note p {
     margin-top: 0px;
     margin-bottom: 0;
+  }
+}
+/************** whatsapp sticky***********/
+.whatsapp-sticky {
+  position: fixed;
+  bottom: 225px;
+  right: 17px;
+  z-index: 999;
+}
+
+.whatsapp-sticky img {
+  width: 50px;
+  height: auto;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .whatsapp-sticky {
+margin-top: 60px;
+bottom: 25%;
+width: 45px;
   }
 }
 
@@ -473,9 +525,7 @@ th {
   line-height: 27px;
   font-weight: 300;
   font-family: "Orienta", sans-serif;
-  background: #20002c;
-  background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
-  background: linear-gradient(to right, #cbb4d4, #20002c);
+  background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
   border-radius: 20px;
   text-align: center;
 }
@@ -483,32 +533,8 @@ th {
 
 /*************read More Pacakge***********/
 
-/************** whatsapp sticky***********/
-.whatsapp-sticky {
-  position: fixed;
-  bottom: 225px;
-  right: 17px;
-  z-index: 999;
-}
 
-.whatsapp-sticky img {
-  width: 55px;
-  height: auto;
-}
 
-@media screen and (max-width: 480px) {
-  .whatsapp-sticky {
-    margin-top: 20px;
-    bottom: 30%;
-  }
-}
-
-@media screen and (max-width: 840px) {
-  .whatsapp-sticky {
-    margin-top: 20px;
-    bottom: 60%;
-  }
-}
 /*** Footer ***/
 .footer .btn.btn-social {
   margin-right: 5px;
@@ -623,9 +649,9 @@ th {
 
 #popupIcon {
   position: fixed;
-  width: 4%;
-  bottom: 22%;
-  right: 17px;
+  width: 3.5%;
+  bottom: 21%;
+  right: 20px;
   cursor: pointer;
   z-index: 1000;
   animation: bounce 1s infinite alternate; /* Use the "bounce" animation */
@@ -641,21 +667,27 @@ th {
     ); /* Adjust the distance you want the icon to move */
   }
 }
-
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   #popupIcon {
-    margin-top: 20px;
-    bottom: 25%;
-    width: 12%;
+    width: 8%; 
+    bottom: 10%; 
   }
 }
 
-@media screen and (max-width: 840px) {
-  #popupIcon {
-    width: 12%;
-    margin-top: 20px;
-    bottom: 50%;
-    right: 14px;
+@media screen and (max-width: 1440px) {
+#popupIcon  {
+margin-top: 30px;
+bottom: 14%;
+width: 45px;
+right: 18;
+  }
+}
+@media screen and (max-width: 1540px) {
+#popupIcon  {
+margin-top: 30px;
+bottom: 14%;
+width: 45px;
+right: 18;
   }
 }
 body {
@@ -664,11 +696,7 @@ body {
   padding: 0;
 }
 
-#popupIcon {
-  cursor: pointer;
-}
-
-#overlay {
+.overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -678,7 +706,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
-#popupForm {
+.popup-form {
   display: none;
   position: fixed;
   top: 50%;
@@ -689,15 +717,39 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 600px;
-  height: 500px;
+  width: 65%; /* Adjust the width as needed */
   box-sizing: border-box;
   overflow: hidden;
 }
 
+#cancel {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-email,
+.mobile-date,
+.place-person {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.label-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 45%; 
+}
 label {
-  display: block;
-  margin-bottom: 8px;
+  margin: 5px;
 }
 
 .popup-input {
@@ -711,28 +763,6 @@ label {
   width: 100%;
 }
 
-.name-email,
-.mobile-date,
-.place-person {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 23px;
-}
-
-.name-email label,
-.mobile-date label,
-.place-person label {
-  margin-right: 10px;
-}
-
-#cancel {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  cursor: pointer;
-}
-
 #submitBtn {
   padding: 10px;
   background-color: #4caf50;
@@ -741,4 +771,16 @@ label {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #popupForm {
+    width: 90%;
+    height: auto;
+  }
+
+  .popup-input {
+    width: 100%;
+  }
 }
