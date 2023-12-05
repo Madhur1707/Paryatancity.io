@@ -1,11 +1,10 @@
-(function ($) {
-  "use strict";
-
+document.addEventListener("DOMContentLoaded", function () {
   // Spinner
   var spinner = function () {
     setTimeout(function () {
-      if ($("#spinner").length > 0) {
-        $("#spinner").removeClass("show");
+      var spinnerElement = document.getElementById("spinner");
+      if (spinnerElement) {
+        spinnerElement.classList.remove("show");
       }
     }, 1);
   };
@@ -15,146 +14,124 @@
   new WOW().init();
 
   // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 45) {
-      $(".navbar").addClass("sticky-top shadow-sm");
+  window.addEventListener("scroll", function () {
+    var navbar = document.querySelector(".navbar");
+    if (window.scrollY > 45) {
+      navbar.classList.add("sticky-top", "shadow-sm");
     } else {
-      $(".navbar").removeClass("sticky-top shadow-sm");
+      navbar.classList.remove("sticky-top", "shadow-sm");
     }
   });
 
   // Dropdown on mouse hover
-  const $dropdown = $(".dropdown");
-  const $dropdownToggle = $(".dropdown-toggle");
-  const $dropdownMenu = $(".dropdown-menu");
-  const showClass = "show";
+  var dropdowns = document.querySelectorAll(".dropdown");
+  var showClass = "show";
 
-  $(window).on("load resize", function () {
-    if (this.matchMedia("(min-width: 992px)").matches) {
-      $dropdown.hover(
-        function () {
-          const $this = $(this);
-          $this.addClass(showClass);
-          $this.find($dropdownToggle).attr("aria-expanded", "true");
-          $this.find($dropdownMenu).addClass(showClass);
-        },
-        function () {
-          const $this = $(this);
-          $this.removeClass(showClass);
-          $this.find($dropdownToggle).attr("aria-expanded", "false");
-          $this.find($dropdownMenu).removeClass(showClass);
-        }
-      );
+  function toggleDropdown() {
+    var thisDropdown = this;
+    thisDropdown.classList.toggle(showClass);
+    var isExpanded = thisDropdown.classList.contains(showClass);
+    thisDropdown.querySelector(".dropdown-toggle").setAttribute("aria-expanded", isExpanded);
+
+    var dropdownMenu = thisDropdown.querySelector(".dropdown-menu");
+    dropdownMenu.classList.toggle(showClass);
+  }
+
+  function handleMediaQuery(mediaQuery) {
+    if (mediaQuery.matches) {
+      dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener("mouseenter", toggleDropdown);
+        dropdown.addEventListener("mouseleave", toggleDropdown);
+      });
     } else {
-      $dropdown.off("mouseenter mouseleave");
+      dropdowns.forEach(function (dropdown) {
+        dropdown.removeEventListener("mouseenter", toggleDropdown);
+        dropdown.removeEventListener("mouseleave", toggleDropdown);
+      });
     }
-  });
+  }
 
-  ///carousel Photos****************
-  $(document).ready(function () {
-    $("#carouselExample").carousel({
+  var mediaQuery = window.matchMedia("(min-width: 992px)");
+  handleMediaQuery(mediaQuery);
+  mediaQuery.addListener(handleMediaQuery);
+
+  // Carousel Photos
+  var carouselExample = document.getElementById("carouselExample");
+  if (carouselExample) {
+    carouselExample.carousel({
       interval: 1000,
     });
+  }
+
+  // Read More Toggle Button
+  function toggleParagraph(day) {
+    var paragraph = document.getElementById("hiddenParagraph" + day);
+    if (paragraph.style.maxHeight === "0px" || paragraph.style.maxHeight === "") {
+      paragraph.style.display = "block";
+      setTimeout(function () {
+        paragraph.style.maxHeight = paragraph.scrollHeight + "px";
+        paragraph.style.opacity = "1";
+      }, 10);
+    } else {
+      paragraph.style.maxHeight = "0px";
+      paragraph.style.opacity = "0";
+      setTimeout(function () {
+        paragraph.style.display = "none";
+      }, 500);
+    }
+  }
+
+  document.getElementById("readMoreButton1").addEventListener("click", function () {
+    toggleParagraph(1);
   });
-  ///carousel Photos****************
 
-  /*******************Read More Toggle Button******** */
-  document.addEventListener("DOMContentLoaded", function() {
-    function toggleParagraph(day) {
-      var paragraph = document.getElementById("hiddenParagraph" + day);
-      if (paragraph.style.maxHeight === "0px" || paragraph.style.maxHeight === "") {
-        paragraph.style.display = "block";
-        setTimeout(function() {
-          paragraph.style.maxHeight = paragraph.scrollHeight + "px";
-          paragraph.style.opacity = "1";
-        }, 10);
-      } else {
-        paragraph.style.maxHeight = "0px";
-        paragraph.style.opacity = "0";
-        setTimeout(function() {
-          paragraph.style.display = "none";
-        }, 500);
-      }
-    }
-  
-    // Use toggleParagraph function for Day 1
-    document.getElementById("readMoreButton1").addEventListener("click", function() {
-      toggleParagraph(1);
-    });
-  
-    // Use toggleParagraph function for Day 2
-    document.getElementById("readMoreButton2").addEventListener("click", function() {
-      toggleParagraph(2);
-    });
-    document.getElementById("readMoreButton3").addEventListener("click",function () {
-     toggleParagraph(3); 
-    });
-  /*******************Read More Toggle Button******** */
-
-  
-    // Add event listener to the "Read More" button
-    var readMoreButton = document.querySelector(".btn-primary.border-end");
-    if (readMoreButton) {
-      readMoreButton.addEventListener("click", toggleParagraph);
-    }
+  document.getElementById("readMoreButton2").addEventListener("click", function () {
+    toggleParagraph(2);
   });
-  
-  /*******************Read More Toggle Button******** */
 
-  /************ PopUp Form  ***************** */
-  document.addEventListener("DOMContentLoaded", function () {
-    var popupIcon = document.getElementById("popupIcon");
-    var popupForm = document.getElementById("popupForm");
-    var overlay = document.getElementById("overlay");
-    var cancelBtn = document.getElementById("cancel");
+  document.getElementById("readMoreButton3").addEventListener("click", function () {
+    toggleParagraph(3);
+  });
 
-    function openPopupForm() {
-        popupForm.style.display = "block";
-        overlay.style.display = "block";
-    }
+  // PopUp Form
+  var popupIcon = document.getElementById("popupIcon");
+  var popupForm = document.getElementById("popupForm");
+  var overlay = document.getElementById("overlay");
+  var cancelBtn = document.getElementById("cancel");
 
-    function closePopupForm() {
-        popupForm.style.display = "none";
-        overlay.style.display = "none";
-    }
+  function openPopupForm() {
+    popupForm.style.display = "block";
+    overlay.style.display = "block";
+  }
 
+  function closePopupForm() {
+    popupForm.style.display = "none";
+    overlay.style.display = "none";
+  }
+
+  if (popupIcon) {
     popupIcon.addEventListener("click", openPopupForm);
+  }
+
+  if (cancelBtn) {
     cancelBtn.addEventListener("click", closePopupForm);
-});
-  /************ PopUp Form  ***************** */
+  }
 
   // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".back-to-top").fadeIn("slow");
+  window.addEventListener("scroll", function () {
+    var backToTop = document.querySelector(".back-to-top");
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
     } else {
-      $(".back-to-top").fadeOut("slow");
+      backToTop.style.display = "none";
     }
   });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-    return false;
-  });
 
-  // Testimonials carousel
-  $(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    center: true,
-    margin: 24,
-    dots: true,
-    loop: true,
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      },
-    },
-  });
-})(jQuery);
+  var backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+  }
+});
